@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Task Analyzer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Smart Task Analyzer</h1>
+  </header>
+
+  <main>
+    <!-- Input Form for single task -->
+<form id="taskForm">
+  <input type="text" name="title" placeholder="Title" required />
+  <input type="date" name="due_date" required />
+  <input type="number" name="estimated_hours" placeholder="Estimated Hours" required min="1" />
+  <input type="number" name="importance" placeholder="Importance (1-10)" required min="1" max="10" />
+  <input type="text" name="dependencies" placeholder="Dependencies (comma IDs)" />
+  <button type="submit">Add Task</button>
+</form>
+
+<!-- Place this button outside the form -->
+<button id="suggestBtn" type="button">Show Top 3 Suggestions</button>
+
+
+    <!-- Bulk JSON Input -->
+    <textarea id="bulkInput" rows="4" placeholder="Paste JSON array for bulk analysis"></textarea>
+
+    <!-- Sorting Strategy Dropdown -->
+    <label for="strategy">Sorting Strategy:</label>
+    <select id="strategy">
+      <option value="smart_balance">Smart Balance</option>
+      <option value="fastest_wins">Fastest Wins</option>
+      <option value="high_impact">High Impact</option>
+      <option value="deadline_driven">Deadline Driven</option>
+    </select>
+    <button id="analyzeBtn">Analyze Tasks</button>
+
+    <!-- Output Section -->
+    <section id="output"></section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
