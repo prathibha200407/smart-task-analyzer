@@ -1,0 +1,221 @@
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: linear-gradient(120deg, #d1e9ff 0%, #f3ffe4 100%);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+header {
+  background: #23395d;
+  color: #fff;
+  padding: 22px 0 14px 0;
+  text-align: center;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(30,50,90,0.07);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+main {
+  max-width: 480px;
+  margin: 36px auto;
+  background: rgba(255,255,255, 0.90);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(80,120,140,0.16);
+  padding: 34px 26px 38px 26px;
+  animation: fadein 0.9s;
+}
+
+@keyframes fadein {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+form input, form button, textarea, select {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 11px;
+  border-radius: 10px;
+  border: 1.5px solid #d2e2f5;
+  font-size: 17px;
+  background: #fafdff;
+  box-sizing: border-box;
+  transition: border 0.24s;
+}
+
+form input:focus, textarea:focus, select:focus {
+  border-color: #87bfff;
+  outline: none;
+  background: #f0fcff;
+}
+
+form button,
+#analyzeBtn {
+  background: linear-gradient(90deg, #44a9fc 55%, #96f892 120%);
+  color: #23395d;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.16s;
+  box-shadow: 0 4px 16px rgba(60,160,220,0.10);
+  letter-spacing: 0.5px;
+}
+
+form button:hover,
+#analyzeBtn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 28px rgba(60,160,220,0.17);
+  background: linear-gradient(90deg,#96f892 0%, #44a9fc 100%);
+}
+
+label {
+  font-weight: 700;
+  margin: 8px 0 5px 0;
+  color: #23395d;
+  font-size: 15px;
+}
+
+#strategy {
+  margin-bottom: 20px;
+  background: #fafdff;
+}
+
+textarea {
+  font-size: 16px;
+  min-height: 55px;
+  resize: vertical;
+}
+
+/* Message styling */
+#msg {
+  margin-bottom: 18px;
+  font-size: 16px;
+  font-weight: 500;
+  animation: fadein 0.6s;
+}
+
+.task-card {
+  margin: 13px 0;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 7px 26px rgba(70,110,170,0.13);
+  border-left: 6px solid #98a3b3;
+  background: #fff;
+  opacity: 0;
+  animation: cardpop 0.7s forwards;
+}
+
+@keyframes cardpop {
+  to { opacity: 1; }
+}
+
+.priority-high {
+  border-left-color: #e74c3c;
+  background: linear-gradient(96deg,#fff4f1 66%,#ffe4e1 120%);
+}
+.priority-medium {
+  border-left-color: #f1c40f;
+  background: linear-gradient(96deg,#FFFCE1 60%,#F9F3C0 120%);
+}
+.priority-low {
+  border-left-color: #2ecc40;
+  background: linear-gradient(92deg,#eaffea 60%,#c4ffda 120%);
+}
+
+.task-card strong {
+  font-size: 19px;
+  color: #23395d;
+  font-weight: bold;
+  letter-spacing: 0.2px;
+}
+
+.explanation {
+  font-size: 15px;
+  color: #70798c;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Add small badge for score */
+.task-card .score-badge {
+  background: #44a9fc;
+  color: #fff;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 5px 11px;
+  float: right;
+  margin-top: -7px;
+}
+
+@media (max-width: 650px) {
+  main {
+    padding: 16px;
+    max-width: 98vw;
+  }
+  form input, form button, textarea, select {
+    font-size: 15px;
+  }
+}
+
+/* Add transition to output */
+#output {
+  transition: box-shadow 0.4s;
+}
+
+
+
+
+
+
+.task-card {
+  background: linear-gradient(135deg, #fff7f7 0%, #f2f7ff 100%);
+  border-radius: 24px 16px 19px 18px;
+  box-shadow: 0 6px 22px rgba(60,110,170,0.15), 0 1.5px 5px rgba(240,60,60,0.08);
+  padding: 22px 26px;
+  margin: 20px 0 12px 0;
+  border-left: 5px solid #f2556a;
+  animation: fadein 0.7s;
+  transition: box-shadow 0.3s;
+}
+
+.task-card:hover {
+  box-shadow: 0 12px 29px rgba(60,110,170,0.19);
+}
+
+.task-card .score-badge {
+  background: linear-gradient(90deg, #44a9fc 0%, #29e5c3 100%);
+  color: #fff;
+  border-radius: 16px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-left: 9px;
+  box-shadow: 0 0.5px 4px rgba(44,169,252,0.1);
+  letter-spacing: 0.04em;
+  display: inline-block;
+}
+
+.task-card strong {
+  font-size: 20px;
+  color: #234487;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.task-card b {
+  color: #2e4f9c;
+}
+
+.task-card .explanation {
+  color: #9097ad;
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
